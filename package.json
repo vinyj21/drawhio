@@ -1,0 +1,15 @@
+{
+  "name": "drawhio-server",
+  "version": "1.0.0",
+  "description": "Servidor Multiplayer Drawhio",
+  "main": "server.js",
+  "scripts": {
+    "postinstall": "node -e \"const fs=require('fs'); if(!fs.existsSync('server')) fs.mkdirSync('server'); ['server.js','gameRoom.js','words.js'].forEach(f => { try { if(fs.existsSync(f)) fs.copyFileSync(f, 'server/' + f); } catch(e){} });\"",
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
+}
